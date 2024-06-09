@@ -36,3 +36,26 @@ for element in myArray {
 }
 
 
+
+var stringArray = MyArray<String>()
+
+stringArray.append("ABC")
+stringArray.append("DEF")
+stringArray.append("GHI")
+print(stringArray.debugDescription)
+
+struct Person: CustomStringConvertible {
+    let name: String
+    let age: Int
+    
+    var description: String {
+        return "\(name) - \(age)"
+    }
+}
+
+var personArray = MyArray<Person>()
+
+personArray.append(Person(name: "Raman", age: 12))
+personArray.append(Person(name: "Lakshmanan", age: 10))
+personArray.append(Person(name: "Krishnan", age: 25))
+print(personArray.debugDescription)

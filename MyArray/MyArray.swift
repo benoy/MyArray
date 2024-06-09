@@ -12,7 +12,6 @@ struct MyArray<T> : CustomDebugStringConvertible, Sequence {
     
     private var capacity: Int
     private var storage: UnsafeMutablePointer<T>
-    
     private var size: Int
     
     init(initialCapacity: Int = 2) {
@@ -46,7 +45,7 @@ struct MyArray<T> : CustomDebugStringConvertible, Sequence {
                 newStorage[i] = storage[i]
             }
             
-            /* Dealocating old storage */
+            /* Deallocating old storage */
             storage.deallocate()
             
             storage = newStorage
@@ -89,7 +88,7 @@ struct MyArray<T> : CustomDebugStringConvertible, Sequence {
         // Deallocate the existing elements
         storage.deallocate()
         capacity = 2
-        // Reinitialize the storage
+        // Reinitialise the storage
         storage = UnsafeMutablePointer<T>.allocate(capacity: capacity)
         size = 0
     }
